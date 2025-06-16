@@ -97,7 +97,7 @@ section:nth-child(odd) {
     color: #000000;
 }
 
-.menu__item--active {
+.menu__link {
     text-decoration: none;
     color: #F5F5F5;
     ;
@@ -106,7 +106,7 @@ section:nth-child(odd) {
 
 }
 
-.menu__item--active:hover {
+.menu__link:hover {
     text-decoration: underline;
     color: #FFB400;
 }
