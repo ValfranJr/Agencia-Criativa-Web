@@ -1,5 +1,7 @@
 @use 'variaveis';
 @use 'mixins';
+@use "sass:math";
+
 .logo {
     width: 25%;
     height: auto;
@@ -33,6 +35,11 @@
         padding: 1%;
 
     }
+
+    &__link:hover {
+        text-decoration: underline;
+        color: variaveis.$cor-link-botao;
+    }
 }
 
 .form {
@@ -50,7 +57,7 @@
         font-size: variaveis.$font_size-padrao;
         background-color: variaveis.$cor-fundo-logo;
         color: variaveis.$cor-primaria;
-        padding: variaveis.$padding-padrao / 2;
+        padding: math.div(variaveis.$padding-padrao, 2);
         margin-bottom: variaveis.$margin-inferior-padrao;
     }
 
@@ -60,13 +67,49 @@
         font-weight: bold;
     }
 
-    &__input, &__textarea {
-    width: 100%;
-    padding: variaveis.$padding-padrao;
-    border-radius: variaveis.$border-radius-padrao;
-    border: 1px solid #ccc;
-    font-size: variaveis.$font_size-padrao / 1.5;
-    margin-bottom: variaveis.$margin-inferior-padrao;
-    box-shadow: variaveis.$sombras;
+    &__input,
+    &__textarea {
+        width: 100%;
+        padding: variaveis.$padding-padrao;
+        border-radius: variaveis.$border-radius-padrao;
+        border: 1px solid #ccc;
+        font-size: math.div(variaveis.$font_size-padrao, 1.5);
+        margin-bottom: variaveis.$margin-inferior-padrao;
+        box-shadow: variaveis.$sombras;
+    }
+
+    &__botao--enviar {
+        color: variaveis.$cor-primaria;
+        margin: 1rem 1rem;
+        padding: variaveis.$padding-padrao;
+        background-color: variaveis.$cor-link-botao;
+        border-radius: variaveis.$border-radius-padrao * 5;
+        border: double variaveis.$cor-fundo;
+        font-size: variaveis.$font_size-padrao;
+        transition: background-color 1s, color 1s;
+        height: max-content;
+        cursor: pointer;
+        box-shadow: variaveis.$sombras;
+    }
+
+    &__botao--enviar:hover {
+        color: variaveis.$cor-fundo;
+        background-color: variaveis.$background-botao;
+    }
+}
+
+/* Ajustes para tablets/celulares */
+@media (max-width: 767px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        height: 0%;
+
+        &__lista {
+            flex-direction: column;
+            gap: variaveis.$gap-padrao;
+            font-size: math.div(variaveis.$font_size-padrao, 1.5);
+            margin-bottom: math.div(variaveis.$margin-inferior-padrao, 2);
+        }
     }
 }
