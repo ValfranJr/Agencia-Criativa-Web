@@ -1,0 +1,15 @@
+@use 'variaveis';
+//Reset css
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: variaveis.$font-principal;
+    padding: variaveis.$padding-padrao;
+    background-color: variaveis.$cor-fundo;
+    color: variaveis.$cor-primaria;
+
+}

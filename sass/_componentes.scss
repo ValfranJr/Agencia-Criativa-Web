@@ -1,0 +1,72 @@
+@use 'variaveis';
+@use 'mixins';
+.logo {
+    width: 25%;
+    height: auto;
+    background-color: variaveis.$cor-fundo-logo;
+}
+
+//Menu de acesso
+.menu {
+    @include mixins.flex(row);
+    justify-content: space-around;
+    align-items: center;
+    gap: variaveis.$gap-padrao;
+    font-size: variaveis.$font_size-padrao;
+
+    //Lista do menu
+    &__lista {
+        display: flex;
+        list-style: variaveis.$estilo-lista;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        margin-right: 2rem;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: variaveis.$estilo-lista;
+        color: variaveis.$cor-fundo;
+        padding: 1%;
+
+    }
+}
+
+.form {
+    @include mixins.flex;
+    gap: variaveis.$gap-padrao;
+    margin-bottom: variaveis.$margin-inferior-padrao;
+    font-size: variaveis.$font_size-padrao;
+
+    &__fieldset {
+        padding: variaveis.$padding-padrao;
+        color: #000000;
+    }
+
+    &__legenda {
+        font-size: variaveis.$font_size-padrao;
+        background-color: variaveis.$cor-fundo-logo;
+        color: variaveis.$cor-primaria;
+        padding: variaveis.$padding-padrao / 2;
+        margin-bottom: variaveis.$margin-inferior-padrao;
+    }
+
+    &__label {
+        margin: 1rem 1rem;
+        margin-bottom: variaveis.$margin-inferior-padrao;
+        font-weight: bold;
+    }
+
+    &__input, &__textarea {
+    width: 100%;
+    padding: variaveis.$padding-padrao;
+    border-radius: variaveis.$border-radius-padrao;
+    border: 1px solid #ccc;
+    font-size: variaveis.$font_size-padrao / 1.5;
+    margin-bottom: variaveis.$margin-inferior-padrao;
+    box-shadow: variaveis.$sombras;
+    }
+}

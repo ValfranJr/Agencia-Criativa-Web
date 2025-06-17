@@ -1,0 +1,23 @@
+@use 'variaveis';
+
+//Cabeçalho
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: variaveis.$padding-padrao;
+    background-color: variaveis.$background-cabecalho;
+    box-shadow: variaveis.$sombras;
+
+}
+//Seções
+section {
+    padding: variaveis.$padding-padrao;
+    font-size: variaveis.$font_size-padrao;
+    margin-bottom: variaveis.$margin-inferior-padrao;
+}
+
+section:nth-child(odd) {
+    background-color: #ddd;
+}
+
